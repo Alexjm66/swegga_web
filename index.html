@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Language" content="en-za" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>ORDER</title>
+<link type="text/css" href="styling.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="page">
+	<div id="sidebar">
+		<img src="swegga.jpg">
+	</div>
+	<div id="banner">
+		<img src="delivery.gif">
+	</div>
+	<div id="navigation">
+		<img src="links.gif" usemap="#myLinks">
+		<map name="myLinks">
+		<area href="home.html" coords="10,5,94,35" shape="rect">
+		<area href="services.html" coords="106,4,193,34" shape="rect">
+		</map>
+	</div>
+
+	<div id="caption">
+		Product Summary
+	</div>
+	<div>
+		<table>
+			<tr>
+				<th>Description</th>
+				<th>Size</th>
+				<th>Colour</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Total</th>
+			</tr>
+			<tr>
+				<td><a href="">Female Ski Jackets</a></td>
+				<td>
+					<select>
+					<option>Small</option>
+					<option>Medium</option>
+					<option>Large</option>
+					</select>
+				</td>
+				<td>
+					<select>
+					<option>Red</option>
+					<option>Green</option>
+					<option>Blue</option>
+					</select>
+				</td>
+				<td><label>150.95</label></td>
+				<td><input type="text" style="width: 65px;" id="fQuantity"></td>
+				<td><input type="text" style="width: 45px;" id="fTotal" disabled></td>
+			</tr>
+			<tr>
+				<td><a href="">Male Ski Jackets</a></td>
+				<td>
+					<select>
+					<option>Small</option>
+					<option>Medium</option>
+					<option>Large</option>
+					</select>
+				</td>
+				<td>
+					<select>
+					<option>Red</option>
+					<option>Green</option>
+					<option>Blue</option>
+					</select>
+				</td>
+				<td><label>180.95</label></td>
+				<td><input type="text" style="width: 65px;" id="mQuantity"></td>
+				<td><input type="text" style="width: 45px;" id="mTotal" disabled></td>
+			</tr>
+			<tr>
+				<td colspan="4"><label>Click to confirm and process your order</label></td>
+				<td><input type="button" value="Total Price" onClick="Total()"></td>
+				<td><input type="text" id="displayTotal" style="width: 40px;"  disabled></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="copyright">
+		<hr style="width: 710px;">
+		<label>&copy 2020 Swegga Fashion - Alexander Maart</label>
+	</div>
+
+	<div id="main">
+		<script>
+			function Total(){
+				let femaleQty = document.getElementById('fQuantity').value;
+				let maleQty = document.getElementById('mQuantity').value;
+
+				let fPrice = 150.95 * femaleQty;
+				let mPrice = 180.95 * maleQty;
+
+				let total = fPrice + mPrice;
+
+				console.log(total)
+
+				document.getElementById('fTotal').value = fPrice;
+				document.getElementById('mTotal').value = mPrice;
+				document.getElementById('displayTotal').value = total;
+
+			}
+		</script>
+	</div>
+	
+</div>
+</body>
+</html>
